@@ -37,7 +37,7 @@
     padding-bottom: 2em;
     padding-right: 2.3em;
     padding-left: 2.3em;
-    margin-bottom: calc(3.3em + var(--FOOTER-HEIGHT));
+    margin-bottom: 3.3em;
 }
 
 .about__cta-title {
