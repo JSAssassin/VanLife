@@ -27,7 +27,7 @@
 }
 
 .navbar__item:nth-child(2),
-.navbar__item:nth-child(3)  {
+.navbar__item:nth-child(3) {
     color: var(--NAVITEMS-RIGHT-FONTCOLOR);
     font-size: 1.3rem;
     font-weight: 600;
