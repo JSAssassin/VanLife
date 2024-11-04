@@ -2,9 +2,11 @@
     --NAVBAR-BGCOLOR: #FFF7ED;
     --NAVBAR-FONTCOLOR: #000000;
     --NAVITEMS-RIGHT-FONTCOLOR: #4D4D4D;
+    --NAVBAR-HEIGHT: 110px;
 }
 
 .navbar {
+    height: var(--NAVBAR-HEIGHT);
     display: flex;
     justify-content: space-between;
     align-items: center;

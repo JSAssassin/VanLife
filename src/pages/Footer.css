@@ -1,9 +1,11 @@
 :root {
     --FOOTER-BGCOLOR: #252525;
     --FOOTER-FONTCOLOR: #AAAAAA;
+    --FOOTER-HEIGHT: 75px;
 }
 
 .footer {
+    height: var(--FOOTER-HEIGHT);
     background: var(--FOOTER-BGCOLOR);
     color: var(--FOOTER-FONTCOLOR);
     text-align: center;

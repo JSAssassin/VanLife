@@ -1,0 +1,40 @@
+:root {
+    --HOME-BG-IMG: url('../assets//home-cover.png');
+    --HOME-FONTCOLOR: #FFFFFF;
+    --HOME-BUTTON-BGCOLOR: #FF8C38;
+}
+
+.home {
+    background-image: var(--HOME-BG-IMG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--HOME-FONTCOLOR);
+    height: calc(100vh - (var(--NAVBAR-HEIGHT) + var(--FOOTER-HEIGHT)));
+    padding: 4em 1.7em 3.2em 1.7em;
+}
+
+.home__content h1 {
+    font-weight: 800;
+    font-size: 2.25rem;
+    margin-bottom: 1em;
+}
+
+.home__content p {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 3.2em;
+}
+
+.home__button {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: inherit;
+    color: inherit;
+    background: var(--HOME-BUTTON-BGCOLOR);
+    border: none;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+}
