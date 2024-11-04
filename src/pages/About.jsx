@@ -1,9 +1,11 @@
+import image from '../assets/about-img.png'
+
 export default function About() {
     return (
         <main className="about">
             <figure className="about__image">
                 <img
-                    src="path/to/image.jpg"
+                    src={image}
                     alt="A man stargazing from the roof of a travel van under a
                     clear night sky"
                 />
