@@ -1,32 +1,37 @@
-import image from '../assets/about-img.png'
+import image from '../assets/about-img.png';
+import './About.css';
 
 export default function About() {
     return (
-        <main className="about">
-            <figure className="about__image">
+        <main className='about'>
+            <figure className='about__image'>
                 <img
                     src={image}
                     alt="A man stargazing from the roof of a travel van under a
                     clear night sky"
                 />
             </figure>
-
-            <header className="about__header">
-                <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
-            </header>
-
-            <section className="about__content">
-                <p>
+            <section className='about__info'>
+                <h1 className='about__info-title'>
+                    Don’t squeeze in a sedan when you could relax in a van.
+                </h1>
+                <p className='about__info-description'>
                     Our mission is to enliven your road trip with the perfect
                     travel van rental. Our vans are recertified before each
                     trip to ensure your travel plans can go off without a hitch.
                     (Hitch costs extra 😉)
                 </p>
-                <p>
+                <p className='about__info-team'>
                     Our team is full of vanlife enthusiasts who know firsthand
                     the magic of touring the world on 4 wheels.
                 </p>
             </section>
+            <div className='about__cta'>
+                <h2 className='about__cta-title'>
+                    Your destination is waiting. Your van is ready.
+                </h2>
+                <button className='about__explore-button'>Explore our vans</button>
+            </div>
         </main>
     );
 }

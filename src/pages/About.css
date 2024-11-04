@@ -1,0 +1,58 @@
+:root {
+    --ABOUT-CTA-BGCOLOR: #FFCC8D;
+    --ABOUT-EXPLORE-BTNCOLOR: #161616;
+    --ABOUT-EXPLORE-FONTCOLOR: #FFFFFF;
+}
+
+.about__image img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    margin-bottom: 3em;
+}
+
+.about__info,
+.about__cta {
+    margin-right: 1.6em;
+    margin-left: 1.6em;
+}
+
+.about__info-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.about__info-description,
+.about__info-team {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 2em;
+}
+
+.about__cta {
+    background: var(--ABOUT-CTA-BGCOLOR);
+    border-radius: 5px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-right: 2.3em;
+    padding-left: 2.3em;
+    margin-bottom: calc(3.3em + var(--FOOTER-HEIGHT));
+}
+
+.about__cta-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+}
+
+.about__explore-button {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    background: var(--ABOUT-EXPLORE-BTNCOLOR);
+    color: var(--ABOUT-EXPLORE-FONTCOLOR);
+    height: 50px;
+    width: 175px;
+    border-radius: 10px;
+}
