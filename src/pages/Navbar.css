@@ -1,0 +1,39 @@
+:root {
+    --NAVBAR-BGCOLOR: #FFF7ED;
+    --NAVBAR-FONTCOLOR: #000000;
+    --NAVITEMS-RIGHT-FONTCOLOR: #4D4D4D;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.25em 1.6em;
+    background: var(--NAVBAR-BGCOLOR);
+    color: var(--NAVBAR-FONTCOLOR);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar__item {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar__item:first-child {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.navbar__item:nth-child(2),
+.navbar__item:nth-child(3)  {
+    color: var(--NAVITEMS-RIGHT-FONTCOLOR);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.navbar__item:nth-child(2) {
+    margin-left: auto;
+    margin-right: 1em;
+}
