@@ -1,0 +1,16 @@
+.vans-list-container {
+    padding-inline: 1.5em;
+}
+
+.vans-list-container h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 1.8em;
+}
+
+.vans-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin-top: 3.6em;
+}

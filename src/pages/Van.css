@@ -1,0 +1,86 @@
+.van {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.van__img-container {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+
+.van__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+.van__type {
+    display: flex;
+    width: 85px;
+    height: 34px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: center;
+    align-items: center;
+    margin-block: 0.6em;
+}
+
+.van__type:hover {
+    color: #FFEAD0;
+}
+
+.van__type:focus {
+    outline: none;
+}
+
+.van__type.selected {
+    color: #FFEAD0;
+}
+
+.van__type.simple:hover,
+.van__type.simple.selected {
+    background-color: #E17654;
+}
+
+.van__type.rugged:hover,
+.van__type.rugged.selected {
+    background-color: #115E59;
+}
+
+.van__type.luxury:hover,
+.van__type.luxury.selected {
+    background-color: #161616;
+}
+
+.van__name,
+.van__price {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.van__info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.van__price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.13em;
+}
+
+.van__price span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
