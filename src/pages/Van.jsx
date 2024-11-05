@@ -1,4 +1,4 @@
-import './van.css';
+import './Van.css';
 
 export default function Van({
     name, price, type, imageUrl, description, singleView
