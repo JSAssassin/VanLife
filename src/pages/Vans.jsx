@@ -1,6 +1,7 @@
 import React from 'react';
 import Van from './Van';
 import './Vans.css';
+import { Link } from 'react-router-dom';
 
 export default function Vans() {
     const [vans, setVans] = React.useState([]);
@@ -13,14 +14,9 @@ export default function Vans() {
         fetchVans();
     }, [])
     const allVans = vans.map(van =>
-        <Van
-            key={van.id}
-            imageUrl={van.imageUrl}
-            name={van.name}
-            price={van.price}
-            type={van.type}
-            singleView={false}
-        />
+        <Link key={van.id} to={`/vans/${van.id}`}>
+            <Van van={van} />
+        </Link>
     )
     return (
         <main className='vans-list-container'>

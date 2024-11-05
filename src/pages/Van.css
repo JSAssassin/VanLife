@@ -1,3 +1,16 @@
+:root {
+    --VAN-TYPE-BGCOLOR: #FFEAD0;
+    --VAN-TYPE-FONTCOLOR: #4D4D4D;
+    --VAN-TYPE-FONTCOLOR-HOVER: #FFEAD0;
+    --VAN-TYPE-FONTCOLOR-SELECTED: #FFEAD0;
+    --VAN-TYPE-SIMPLE-BGCOLOR: #E17654;
+    --VAN-TYPE-RUGGED-BGCOLOR: #115E59;
+    --VAN-TYPE-LUXURY-BGCOLOR: #161616;
+    --VAN-DESC-FONTCOLOR: #161616;
+    --VAN-RENT-BTN-BGCOLOR: #FF8C38;
+    --VAN-RENT-BTN-FONTCOLOR: #FFFFFF;
+}
+
 .van {
     display: flex;
     flex-direction: column;
@@ -10,6 +23,11 @@
     position: relative;
 }
 
+.van__img-container-detailed {
+    margin-top: 2.5em;
+    margin-bottom: 3em;
+}
+
 .van__img {
     width: 100%;
     height: 100%;
@@ -20,46 +38,64 @@
     object-fit: cover;
 }
 
-.van__type {
+.van__type,
+.van__type-detailed {
     display: flex;
-    width: 85px;
-    height: 34px;
-    font-weight: 500;
+    width: 86px;
+    height: 35px;
+    font-weight: 600;
     border: none;
     border-radius: 5px;
-    background-color: #FFEAD0;
-    color: #4D4D4D;
+    background-color: var(--VAN-TYPE-BGCOLOR);
+    color: var(--VAN-TYPE-FONTCOLOR);
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
+}
+
+.van__type {
     margin-block: 0.6em;
 }
 
-.van__type:hover {
-    color: #FFEAD0;
+.van__type-detailed {
+    margin-bottom: 1.3em;
 }
 
-.van__type:focus {
+.van__type:hover,
+.van__type-detailed:hover {
+    color: var(--VAN-TYPE-FONTCOLOR-HOVER);
+}
+
+.van__type:focus,
+.van__type-detailed:focus {
     outline: none;
 }
 
-.van__type.selected {
-    color: #FFEAD0;
+.van__type.selected,
+.van__type-detailed.selected {
+    color: var(--VAN-TYPE-FONTCOLOR-SELECTED);
 }
 
 .van__type.simple:hover,
-.van__type.simple.selected {
-    background-color: #E17654;
+.van__type.simple.selected,
+.van__type-detailed.simple:hover,
+.van__type-detailed.simple.selected {
+    background-color: var(--VAN-TYPE-SIMPLE-BGCOLOR);
 }
 
 .van__type.rugged:hover,
-.van__type.rugged.selected {
-    background-color: #115E59;
+.van__type.rugged.selected,
+.van__type-detailed.rugged:hover,
+.van__type-detailed.rugged.selected {
+    background-color: var(--VAN-TYPE-RUGGED-BGCOLOR);
 }
 
 .van__type.luxury:hover,
-.van__type.luxury.selected {
-    background-color: #161616;
+.van__type.luxury.selected,
+.van__type-detailed.luxury:hover,
+.van__type-detailed.luxury.selected  {
+    background-color: var(--VAN-TYPE-LUXURY-BGCOLOR);
 }
 
 .van__name,
@@ -68,10 +104,25 @@
     font-weight: 600;
 }
 
+.van__price-detailed {
+    font-weight: 700;
+}
+
+.van__name-detailed {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.6em;
+}
+
 .van__info {
     display: flex;
     justify-content: space-around;
     margin-top: 0.6em;
+}
+
+.van__info-detailed {
+    display: flex;
+    flex-direction: column;
 }
 
 .van__price-container {
@@ -81,7 +132,34 @@
     row-gap: 0.13em;
 }
 
+.van__price-container-detailed {
+    display: flex;
+    column-gap: 0.13em;
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+}
+
 .van__price span {
     font-size: 0.8rem;
     font-weight: 500;
+}
+
+.van__desc {
+    color: var(--VAN-DESC-FONTCOLOR);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.3em;
+}
+
+.van__rent-btn {
+    width: 100%;
+    background: var(--VAN-RENT-BTN-BGCOLOR);
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--VAN-RENT-BTN-FONTCOLOR);
+    font-weight: 700;
+    margin-bottom: 4.2em;
+    font-family: 'Inter', serif;
 }

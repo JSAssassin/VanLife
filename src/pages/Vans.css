@@ -1,3 +1,6 @@
+:root {
+    --VAN-LIST-FONTCOLOR: #161616;
+}
 .vans-list-container {
     padding-inline: 1.5em;
 }
@@ -13,4 +16,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
     margin-top: 3.6em;
+}
+
+.vans-list a {
+    color: var(--VAN-LIST-FONTCOLOR);
+    text-decoration: none;
 }
