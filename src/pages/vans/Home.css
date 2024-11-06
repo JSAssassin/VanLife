@@ -1,5 +1,5 @@
 :root {
-    --HOME-BG-IMG: url('../assets//home-cover.png');
+    --HOME-BG-IMG: url('../../assets//home-cover.png');
     --HOME-FONTCOLOR: #FFFFFF;
     --HOME-BUTTON-BGCOLOR: #FF8C38;
 }
