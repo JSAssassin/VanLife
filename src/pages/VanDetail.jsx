@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Van from './Van';
+import Van from '../components/Van';
 import './VanDetail.css';
 
 export default function VanDetail() {
