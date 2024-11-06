@@ -17,6 +17,12 @@ export default function HostHeader() {
                 Income
             </NavLink>
             <NavLink
+                to='/host/vans'
+                className={({ isActive }) => isActive ? "active-link" : ""}
+            >
+                Vans
+            </NavLink>
+            <NavLink
                 to='/host/reviews'
                 className={({ isActive }) => isActive ? "active-link" : ""}
             >
