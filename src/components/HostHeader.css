@@ -1,0 +1,25 @@
+:root {
+    --HOST-HEADER-LINK-FONTCOLOR: #4D4D4D;
+    --HOST-HEADER-LINK-FOCUS-FONTCOLOR: #161616;
+}
+
+.host-header {
+    display: flex;
+    column-gap: 1.8em;
+    margin-top: 2em;
+    margin-bottom: 2.8em;
+    padding-inline: 1.6em;
+    font-size: 1.2rem;
+}
+
+.host-header a {
+    text-decoration: none;
+    color: var(--HOST-HEADER-LINK-FONTCOLOR);
+    font-weight: 500;
+}
+
+.host-header a:focus {
+    color: var(--HOST-HEADER-LINK-FOCUS-FONTCOLOR);
+    text-decoration: underline;
+    font-weight: 700;
+}
