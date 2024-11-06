@@ -2,7 +2,7 @@
     --NAVBAR-BGCOLOR: #FFF7ED;
     --NAVBAR-FONTCOLOR: #000000;
     --NAVITEMS-RIGHT-FONTCOLOR: #4D4D4D;
-    --NAVITEMS-FONTCOLOR-FOCUS: #161616;
+    --NAVITEMS-FONTCOLOR-ACTIVE: #161616;
     --NAVBAR-HEIGHT: 110px;
 }
 
@@ -23,11 +23,6 @@
     color: inherit;
 }
 
-.navbar__item:focus {
-    color: var(--NAVITEMS-FONTCOLOR-FOCUS);
-    text-decoration: underline;
-}
-
 .navbar__logo img {
     width: 100%;
     height: 100%;
@@ -46,4 +41,11 @@
     font-weight: 600;
     margin-left: auto;
     column-gap: 8px;
+}
+
+.active-link,
+.navbar__item:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    color: var(--NAVITEMS-FONTCOLOR-ACTIVE);
 }

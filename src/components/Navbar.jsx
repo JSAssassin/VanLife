@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import navbarLogo from '../assets/logo.png'
 import './Navbar.css';
 
@@ -9,9 +9,24 @@ export default function Navbar() {
                 <img src={navbarLogo} alt="navbar logo" />
             </Link>
             <div className="navbar__items">
-                <Link to="/host" className="navbar__item">Host</Link>
-                <Link to="/about" className="navbar__item">About</Link>
-                <Link to="/vans" className="navbar__item">Vans</Link>
+                <NavLink
+                    to="/host"
+                    className={({ isActive }) => `navbar__item ${isActive ? "active-link" : ""}`}
+                >
+                    Host
+                </NavLink>
+                <NavLink
+                    to="/about"
+                    className={({ isActive }) => `navbar__item ${isActive ? "active-link" : ""}`}
+                >
+                    About
+                </NavLink>
+                <NavLink
+                    to="/vans"
+                    className={({ isActive }) => `navbar__item ${isActive ? "active-link" : ""}`}
+                >
+                    Vans
+                </NavLink>
             </div>
         </nav>
     );

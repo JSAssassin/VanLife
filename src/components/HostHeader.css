@@ -1,6 +1,6 @@
 :root {
     --HOST-HEADER-LINK-FONTCOLOR: #4D4D4D;
-    --HOST-HEADER-LINK-FOCUS-FONTCOLOR: #161616;
+    --HOST-HEADER-LINK-ACTIVE-FONTCOLOR: #161616;
 }
 
 .host-header {
@@ -18,8 +18,9 @@
     font-weight: 500;
 }
 
-.host-header a:focus {
-    color: var(--HOST-HEADER-LINK-FOCUS-FONTCOLOR);
+.host-header a:hover,
+.active-link {
+    color: var(--HOST-HEADER-LINK-ACTIVE-FONTCOLOR);
     text-decoration: underline;
     font-weight: 700;
 }
