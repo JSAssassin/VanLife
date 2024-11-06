@@ -2,13 +2,13 @@
     --NAVBAR-BGCOLOR: #FFF7ED;
     --NAVBAR-FONTCOLOR: #000000;
     --NAVITEMS-RIGHT-FONTCOLOR: #4D4D4D;
+    --NAVITEMS-FONTCOLOR-FOCUS: #161616;
     --NAVBAR-HEIGHT: 110px;
 }
 
 .navbar {
     height: var(--NAVBAR-HEIGHT);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 2.25em 1.6em;
     background: var(--NAVBAR-BGCOLOR);
@@ -23,6 +23,11 @@
     color: inherit;
 }
 
+.navbar__item:focus {
+    color: var(--NAVITEMS-FONTCOLOR-FOCUS);
+    text-decoration: underline;
+}
+
 .navbar__logo img {
     width: 100%;
     height: 100%;
@@ -34,14 +39,11 @@
     height: 41px;
 }
 
-.navbar__item:nth-child(2),
-.navbar__item:nth-child(3) {
+.navbar__items {
+    display: flex;
     color: var(--NAVITEMS-RIGHT-FONTCOLOR);
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
-}
-
-.navbar__item:nth-child(2) {
     margin-left: auto;
-    margin-right: 1em;
+    column-gap: 8px;
 }

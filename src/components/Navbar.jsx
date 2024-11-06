@@ -8,8 +8,11 @@ export default function Navbar() {
             <Link to="/" className="navbar__logo">
                 <img src={navbarLogo} alt="navbar logo" />
             </Link>
-            <Link to="/about" className="navbar__item">About</Link>
-            <Link to="/vans" className="navbar__item">Vans</Link>
+            <div className="navbar__items">
+                <Link to="/host" className="navbar__item">Host</Link>
+                <Link to="/about" className="navbar__item">About</Link>
+                <Link to="/vans" className="navbar__item">Vans</Link>
+            </div>
         </nav>
     );
 }
