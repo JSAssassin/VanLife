@@ -23,9 +23,15 @@
     color: inherit;
 }
 
-.navbar__item:first-child {
-    font-size: 1.5rem;
-    font-weight: 900;
+.navbar__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.navbar__logo {
+    width: 145px;
+    height: 41px;
 }
 
 .navbar__item:nth-child(2),
