@@ -6,6 +6,7 @@ export default function HostHeader() {
         <nav className='host-header'>
             <NavLink
                 to='/host'
+                end
                 className={({ isActive }) => isActive ? "active-link" : ""}
             >
                 Dashboard

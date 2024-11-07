@@ -19,7 +19,8 @@
 }
 
 .host-header a:hover,
-.active-link {
+.host-header a:focus,
+.host-header a.active-link {
     color: var(--HOST-HEADER-LINK-ACTIVE-FONTCOLOR);
     text-decoration: underline;
     font-weight: 700;
