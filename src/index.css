@@ -4,7 +4,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --BODY-BGCOLOR: #FFF7ED;
+}
+
 html,
 body {
     font-family: "Inter", serif;
+    background: VAR(--BODY-BGCOLOR);
 }
