@@ -48,3 +48,8 @@
     font-size: 1rem;
     color: var(--HOST-VAN-DETAIL-PRICE-COLOR)
 }
+
+a.host-vans__card {
+    text-decoration: none;
+    color: var(--HOST-COLOR);
+}
