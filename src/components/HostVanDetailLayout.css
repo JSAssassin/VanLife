@@ -1,0 +1,27 @@
+.host-van-detail-layout {
+    margin-inline: 1.6em;
+}
+
+.host-vans__card-detail-layout {
+    height: 210px;
+}
+
+.host-vans__card-detail-layout img {
+    width: 160px;
+    height: 157px;
+    border-radius: 5px;
+    margin-right: 1.25em;
+}
+
+.host-vans__card-detail-layout h1 {
+    margin-bottom: 0.2em;
+}
+
+.host-vans__card-detail-layout p {
+    font-weight: 600;
+    color: var(--HOST-COLOR);
+}
+
+.host-vans__card-detail-layout p span {
+    color: var(--HOST-VAN-DETAIL-PRICE-COLOR);
+}
