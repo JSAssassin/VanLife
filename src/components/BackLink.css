@@ -1,0 +1,20 @@
+
+a.back-link {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    color: inherit;
+    padding-inline: 1.6em;
+    margin-bottom: 2.3em;
+}
+
+a.back-link .back-arrow {
+    color: #858585;
+    margin-right: 0.6em;
+}
+
+a.back-link p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #201F1D;
+}
