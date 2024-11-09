@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HostVanDetailCard from '../../components/HostVanDetailCard'
 import './HostVans.css';
 
 export default function HostVans() {
@@ -14,13 +15,9 @@ export default function HostVans() {
             <Link
                 to={`/host/vans/${hostVan.id}`}
                 key={hostVan.id}
-                className='host-vans__card'
+                className='host-vans__card-link'
             >
-                <img src={hostVan.imageUrl} alt={`Image of ${hostVan.name}`}/>
-                <div className='host-vans__card-detail'>
-                    <h1>{hostVan.name}</h1>
-                    <p>${hostVan.price}/day</p>
-                </div>
+                <HostVanDetailCard hostVan={hostVan} />
             </Link>
         )
     })
