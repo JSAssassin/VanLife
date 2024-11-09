@@ -1,5 +1,6 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
+import BackLink from '../../components/BackLink';
+import React from 'react';
 import Van from '../../components/Van';
 import './VanDetail.css';
 
@@ -13,6 +14,7 @@ export default function VanDetail() {
     }, [vanId])
     return (
         <div className="van-detail-container">
+            <BackLink linkTo='/vans'/>
             <Van isDetailView={true} van={van}/>
         </div>
     )

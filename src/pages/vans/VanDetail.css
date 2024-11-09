@@ -1,3 +1,8 @@
 .van-detail-container {
     padding-inline: 1.5em;
 }
+
+a.back-link {
+    padding-inline: 0;
+    margin-bottom: 3.8em;
+}
