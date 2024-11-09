@@ -1,11 +1,11 @@
-import './HostVanDetailCard.css';
 import classnames from 'classnames';
+import './HostVanDetailCard.css';
 
 export default function HostVanDetailCard({
     showType = false, hostVan, className=''
 }) {
     const vanType = (
-        <div className={`${hostVan.type} selected`}>
+        <div className={`host-vans__type ${hostVan.type} selected`}>
             {hostVan.type}
         </div>
     )
@@ -15,7 +15,7 @@ export default function HostVanDetailCard({
             <div className='host-vans__card-detail'>
                 { showType ? vanType : null }
                 <h1>{hostVan.name}</h1>
-                <p>${hostVan.price}/day</p>
+                <p>${hostVan.price}<span>/day</span></p>
             </div>
         </div>
     )

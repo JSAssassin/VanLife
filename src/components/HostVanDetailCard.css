@@ -33,3 +33,46 @@ a.host-vans__card-link {
     text-decoration: none;
     color: var(--HOST-COLOR);
 }
+
+.host-vans__type {
+    display: flex;
+    width: 70px;
+    height: 28px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--VAN-TYPE-BGCOLOR);
+    color: var(--VAN-TYPE-FONTCOLOR);
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-block: 0.8em;
+}
+
+.host-vans__type:hover {
+    color: var(--VAN-TYPE-FONTCOLOR-HOVER);
+}
+
+.host-vans__type:focus {
+    outline: none;
+}
+
+.host-vans__type.selected {
+    color: var(--VAN-TYPE-FONTCOLOR-SELECTED);
+}
+
+.host-vans__type.simple:hover,
+.host-vans__type.simple.selected {
+    background-color: var(--VAN-TYPE-SIMPLE-BGCOLOR);
+}
+
+.host-vans__type.rugged:hover,
+.host-vans__type.rugged.selected {
+    background-color: var(--VAN-TYPE-RUGGED-BGCOLOR);
+}
+
+.host-vans__type.luxury:hover,
+.host-vans__type.luxury.selected  {
+    background-color: var(--VAN-TYPE-LUXURY-BGCOLOR);
+}
