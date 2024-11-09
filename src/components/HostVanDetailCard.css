@@ -1,0 +1,35 @@
+:root {
+    --HOST-VAN-CARD-BGCOLOR: #FFFFFF;
+    --HOST-VAN-DETAIL-PRICE-COLOR: #4D4D4D;
+}
+
+.host-vans__card {
+    height: 102px;
+    display: flex;
+    align-items: center;
+    background: var(--HOST-VAN-CARD-BGCOLOR);
+}
+
+.host-vans__card img {
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+    margin-left: 1.5em;
+    margin-right: 1em;
+}
+
+.host-vans__card-detail h1 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.host-vans__card-detail p {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--HOST-VAN-DETAIL-PRICE-COLOR)
+}
+
+a.host-vans__card-link {
+    text-decoration: none;
+    color: var(--HOST-COLOR);
+}
