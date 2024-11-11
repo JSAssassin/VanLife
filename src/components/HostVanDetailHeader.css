@@ -1,0 +1,29 @@
+:root {
+    --HOST-VAN-DETAIL-HEADER-LINK-FONTCOLOR: #4D4D4D;
+    --HOST-VAN-DETAIL-HEADER-ACTIVE-FONTCOLOR: #161616;
+    --HOST-VAN-DETAIL-HEADER-BGCOLOR: #FFFFFF;
+}
+
+.host-van-detail-header {
+    display: flex;
+    column-gap: 1.3em;
+    font-size: 1rem;
+    background-color: var(--HOST-VAN-DETAIL-HEADER-BGCOLOR);
+    padding-left: 1.5em;
+    padding-top: 0.1em;
+    padding-bottom: 1.6em;
+}
+
+.host-van-detail-header a {
+    text-decoration: none;
+    color: var(--HOST-HEADER-LINK-FONTCOLOR);
+    font-weight: 500;
+}
+
+.host-van-detail-header a:hover,
+.host-van-detail-header a:focus,
+.host-van-detail-header a.active-link {
+    color: var(--HOST-HEADER-LINK-ACTIVE-FONTCOLOR);
+    text-decoration: underline;
+    font-weight: 700;
+}
