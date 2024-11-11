@@ -1,6 +1,7 @@
 import { Outlet, useParams } from 'react-router-dom';
 import BackLink from './BackLink';
 import HostVanDetailCard from './HostVanDetailCard';
+import HostVanDetailHeader from './HostVanDetailHeader';
 import React from 'react';
 import './HostVanDetailLayout.css';
 
@@ -18,7 +19,12 @@ export default function HostVanDetailLayout() {
         <HostVanDetailContext.Provider value={hostVan}>
             <div className='host-van-detail-layout'>
                 <BackLink linkTo='/host/vans'/>
-                <HostVanDetailCard showType={true} hostVan={hostVan} className='host-vans__card-detail-layout' />
+                <HostVanDetailCard
+                    showType={true}
+                    hostVan={hostVan}
+                    className='host-vans__card-detail-layout'
+                />
+                <HostVanDetailHeader hostVan={hostVan} />
                 <Outlet />
             </div>
         </HostVanDetailContext.Provider>
