@@ -1,0 +1,16 @@
+:root {
+    --HOST-VAN-PHOTOS-BGCOLOR: #FFFFFF;
+}
+
+.host-van-photos {
+    padding-inline: 1em;
+    padding-block: 0.25em 1.65em;
+    background:  var(--HOST-VAN-PHOTOS-BGCOLOR);
+    margin-bottom: 3.8em;
+}
+
+.host-van-photos img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
