@@ -16,18 +16,16 @@ export default function HostVanDetailLayout() {
             .then(data => setHostVan(data.vans))
     }, [vanId])
     return (
-        <HostVanDetailContext.Provider value={hostVan}>
-            <div className='host-van-detail-layout'>
-                <BackLink />
-                <HostVanDetailCard
-                    showType={true}
-                    hostVan={hostVan}
-                    className='host-vans__card-detail-layout'
-                />
-                <HostVanDetailHeader hostVan={hostVan} />
-                <Outlet />
-            </div>
-        </HostVanDetailContext.Provider>
+        <div className='host-van-detail-layout'>
+            <BackLink />
+            <HostVanDetailCard
+                showType={true}
+                hostVan={hostVan}
+                className='host-vans__card-detail-layout'
+            />
+            <HostVanDetailHeader hostVan={hostVan} />
+            <Outlet context={hostVan} />
+        </div>
     );
 }
 

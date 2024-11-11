@@ -1,9 +1,8 @@
-import { HostVanDetailContext } from '../../components/HostVanDetailLayout';
-import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 import './HostVanDetails.css';
 
 export default function HostVanDetails() {
-    const hostVan = React.useContext(HostVanDetailContext);
+    const hostVan = useOutletContext()
     return (
         <div className='host-van-details'>
             <p><span>Name:</span> {hostVan.name}</p>

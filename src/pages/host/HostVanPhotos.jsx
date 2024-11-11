@@ -1,9 +1,8 @@
-import { HostVanDetailContext } from '../../components/HostVanDetailLayout';
-import React from 'react';
 import './HostVanPhotos.css';
+import { useOutletContext } from 'react-router-dom';
 
 export default function HostVanPhotos() {
-    const hostVan = React.useContext(HostVanDetailContext);
+    const hostVan = useOutletContext();
     return (
         <div className='host-van-photos'>
             <img
