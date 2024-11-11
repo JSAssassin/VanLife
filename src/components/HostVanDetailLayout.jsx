@@ -13,7 +13,7 @@ export default function HostVanDetailLayout() {
     React.useEffect(() => {
         fetch(`/api/host/vans/${vanId}`)
             .then(res => res.json())
-            .then(data => setHostVan(data.vans[0]))
+            .then(data => setHostVan(data.vans))
     }, [vanId])
     return (
         <HostVanDetailContext.Provider value={hostVan}>
