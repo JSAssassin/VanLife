@@ -1,0 +1,19 @@
+:root {
+    --HOST-VAN-DETAIL-BGCOLOR: #FFFFFF;
+}
+
+.host-van-details {
+    background: var(--HOST-VAN-DETAIL-BGCOLOR);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.7em;
+    row-gap: 1em;
+    margin-bottom: 2.8em;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.host-van-details span {
+    font-weight: 700;
+}
