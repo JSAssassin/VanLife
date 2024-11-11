@@ -5,7 +5,7 @@ export default function HostVanDetailHeader() {
     return (
         <nav className='host-van-detail-header'>
             <NavLink
-                to=''
+                to='.'
                 end
                 className={({ isActive }) => isActive ? "active-link" : ""}
             >
