@@ -6,7 +6,7 @@ import './VanDetail.css';
 
 export default function VanDetail() {
     const {id: vanId} = useParams();
-    const [van, setVan] = React.useState({});
+    const [van, setVan] = React.useState(null);
     React.useEffect(() => {
         fetch(`/api/vans/${vanId}`)
             .then(res => res.json())
@@ -15,7 +15,7 @@ export default function VanDetail() {
     return (
         <div className="van-detail-container">
             <BackLink linkTo='/vans'/>
-            <Van isDetailView={true} van={van}/>
+            {van && <Van isDetailView={true} van={van}/>}
         </div>
     )
 }
