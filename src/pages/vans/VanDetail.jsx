@@ -14,7 +14,7 @@ export default function VanDetail() {
     }, [vanId])
     return (
         <div className="van-detail-container">
-            <BackLink linkTo='/vans'/>
+            <BackLink />
             {van && <Van isDetailView={true} van={van}/>}
         </div>
     )

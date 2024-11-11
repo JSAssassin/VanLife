@@ -18,7 +18,7 @@ export default function HostVanDetailLayout() {
     return (
         <HostVanDetailContext.Provider value={hostVan}>
             <div className='host-van-detail-layout'>
-                <BackLink linkTo='/host/vans'/>
+                <BackLink />
                 <HostVanDetailCard
                     showType={true}
                     hostVan={hostVan}
