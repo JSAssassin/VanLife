@@ -3,7 +3,9 @@ import About from './pages/vans/About';
 import Dashboard from './pages/host/Dashboard';
 import Home from './pages/vans/Home';
 import HostLayout from './components/HostLayout';
-import HostVanDetail from './pages/host/HostVanDetail';
+import HostVanDetails from './pages/host/HostVanDetails';
+import HostVanPhotos from './pages/host/HostVanPhotos';
+import HostVanPricing from './pages/host/HostVanPricing';
 import HostVanDetailLayout from './components/HostVanDetailLayout';
 import HostVans from './pages/host/HostVans';
 import Income from './pages/host/Income';
@@ -28,7 +30,9 @@ function App() {
             <Route path='reviews' element={<Reviews />} />
             <Route path='vans' element={<HostVans />} />
             <Route path='vans/:id' element={<HostVanDetailLayout />}>
-              <Route index element={<HostVanDetail />} />
+              <Route index element={<HostVanDetails />} />
+              <Route path='pricing' element={<HostVanPricing />} />
+              <Route path='photos' index element={<HostVanPhotos />} />
             </Route>
           </Route>
         </Route>
