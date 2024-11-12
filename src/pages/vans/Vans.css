@@ -1,6 +1,7 @@
 :root {
     --VAN-LIST-FONTCOLOR: #161616;
 }
+
 .vans-list-container {
     padding-inline: 1.5em;
 }
@@ -15,10 +16,83 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
-    margin-top: 3.6em;
+    margin-top: 2.6em;
+    margin-bottom: calc(3em + var(--FOOTER-HEIGHT))
 }
 
 .vans-list a {
     color: var(--VAN-LIST-FONTCOLOR);
     text-decoration: none;
+}
+
+.van-list-filter-btns {
+    display: flex;
+}
+
+.van-type {
+    margin-top: 22px;
+    display: flex;
+    width: 70px;
+    height: 30px;
+    font-weight: 500;
+    border-radius: 5px;
+    color: #4D4D4D;
+    justify-content: center;
+    align-items: center;
+    font-size: 12.5px;
+    border: none;
+    font-family: inherit;
+}
+
+.van-type.simple,
+.van-type.rugged,
+.van-type.luxury {
+    background-color: var(--VAN-TYPE-BGCOLOR);
+}
+
+.van-type.simple,
+.van-type.luxury {
+    margin-right: 10px;
+}
+
+.van-type.rugged {
+    margin-right: auto;
+}
+
+.van-type:hover {
+    color: var(--VAN-TYPE-FONTCOLOR-HOVER);
+}
+
+.van-type:focus {
+    outline: none;
+}
+
+.van-type.selected {
+    color: var(--VAN-TYPE-FONTCOLOR-SELECTED);
+}
+
+.van-type.simple:hover,
+.van-type.simple.selected {
+    background-color: var(--VAN-TYPE-SIMPLE-BGCOLOR);
+}
+
+.van-type.rugged:hover,
+.van-type.rugged.selected {
+    background-color: var(--VAN-TYPE-RUGGED-BGCOLOR);
+}
+
+.van-type.luxury:hover,
+.van-type.luxury.selected {
+    background-color: var(--VAN-TYPE-LUXURY-BGCOLOR);
+}
+
+.van-type.clear-filters,
+.van-type.clear-filters.selected {
+    background-color: inherit;
+    text-decoration: underline;
+}
+
+.van-type.clear-filters:hover,
+.van-type.clear-filters.selected {
+    color: #4D4D4D;
 }

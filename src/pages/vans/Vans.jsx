@@ -1,10 +1,12 @@
+import { Link, useSearchParams } from 'react-router-dom';
 import React from 'react';
 import Van from '../../components/Van';
 import './Vans.css';
-import { Link } from 'react-router-dom';
 
 export default function Vans() {
     const [vans, setVans] = React.useState([]);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const typeFilter = searchParams.get("type");
     React.useEffect(() => {
         const fetchVans = async () => {
             const res = await fetch("/api/vans");
@@ -13,7 +15,10 @@ export default function Vans() {
         };
         fetchVans();
     }, [])
-    const allVans = vans.map(van =>
+    const displayedVans = typeFilter
+        ? vans.filter(van => van.type === typeFilter)
+        : vans
+    const allVans = displayedVans.map(van =>
         <Link key={van.id} to={`/vans/${van.id}`}>
             <Van van={van} />
         </Link>
@@ -21,6 +26,32 @@ export default function Vans() {
     return (
         <main className='vans-list-container'>
             <h1>Explore our van options</h1>
+            <div className="van-list-filter-btns">
+                <button
+                    onClick={() => setSearchParams({type: 'simple'})}
+                    className={`van-type simple ${typeFilter === 'simple' ? 'selected' : ''}`}
+                >
+                    Simple
+                </button>
+                <button
+                    onClick={() => setSearchParams({type: 'luxury'})}
+                    className={`van-type luxury ${typeFilter === 'luxury' ? 'selected' : ''}`}
+                >
+                    Luxury
+                </button>
+                <button
+                    onClick={() => setSearchParams({type: 'rugged'})}
+                    className={`van-type rugged ${typeFilter === 'rugged' ? 'selected' : ''}`}
+                >
+                    Rugged
+                </button>
+                <button
+                    onClick={() => setSearchParams({})}
+                    className='van-type clear-filters'
+                >
+                    Clear filters
+                </button>
+            </div>
             <div className="vans-list">
                 {allVans}
             </div>
