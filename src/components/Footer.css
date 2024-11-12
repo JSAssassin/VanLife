@@ -9,7 +9,7 @@
     background: var(--FOOTER-BGCOLOR);
     color: var(--FOOTER-FONTCOLOR);
     padding: 1.6em 6.5em;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     z-index: 1000;
     width: 100%;

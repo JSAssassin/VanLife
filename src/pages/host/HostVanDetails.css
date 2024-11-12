@@ -9,7 +9,7 @@
     flex-direction: column;
     padding: 1.7em;
     row-gap: 1em;
-    margin-bottom: 2.8em;
+    margin-bottom: calc(2.8em + var(--FOOTER-HEIGHT));
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
