@@ -26,12 +26,12 @@ export default function VanDetail() {
     }, [vanId]);
 
     if(loading) {
-        return <h2 className='loading'>Loading...</h2>
+        return <h2 className='loading' aria-live='polite'>Loading...</h2>
     }
 
     if(error) {
         return (
-            <p className='error'>
+            <p className='error' aria-live='assertive'>
                 There was an Error: {error.message}
             </p>
         )
