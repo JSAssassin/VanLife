@@ -10,6 +10,7 @@ import HostVanDetailLayout from './components/HostVanDetailLayout';
 import HostVans from './pages/host/HostVans';
 import Income from './pages/host/Income';
 import Layout from './components/Layout';
+import NotFound from './pages/NotFound';
 import Reviews from './pages/host/Reviews';
 import VanDetail from './pages/vans/VanDetail';
 import Vans from './pages/vans/Vans';
@@ -35,6 +36,8 @@ function App() {
               <Route path='photos' index element={<HostVanPhotos />} />
             </Route>
           </Route>
+
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
