@@ -27,24 +27,34 @@ export default function Vans() {
             <Van van={van} />
         </Link>
     )
+    const handleFilterChange = (key, value) => {
+        setSearchParams(prevParams => {
+            if(value ===  null) {
+                prevParams.delete(key);
+            } else {
+                prevParams.set(key, value);
+            }
+            return prevParams;
+        })
+    }
     return (
         <main className='vans-list-container'>
             <h1>Explore our van options</h1>
             <div className="van-list-filter-btns">
                 <button
-                    onClick={() => setSearchParams({type: 'simple'})}
+                    onClick={() => handleFilterChange('type', 'simple')}
                     className={`van-type simple ${typeFilter === 'simple' ? 'selected' : ''}`}
                 >
                     Simple
                 </button>
                 <button
-                    onClick={() => setSearchParams({type: 'luxury'})}
+                    onClick={() => handleFilterChange('type', 'luxury')}
                     className={`van-type luxury ${typeFilter === 'luxury' ? 'selected' : ''}`}
                 >
                     Luxury
                 </button>
                 <button
-                    onClick={() => setSearchParams({type: 'rugged'})}
+                    onClick={() => handleFilterChange('type', 'rugged')}
                     className={`van-type rugged ${typeFilter === 'rugged' ? 'selected' : ''}`}
                 >
                     Rugged
