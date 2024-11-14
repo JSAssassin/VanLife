@@ -1,14 +1,25 @@
 import React from 'react';
+import { getHostVans } from '../../api';
 import { Link } from 'react-router-dom';
 import HostVanDetailCard from '../../components/HostVanDetailCard'
 import './HostVans.css';
 
 export default function HostVans() {
     const [hostVans, setHostVans] = React.useState([]);
+    const [loading, setLoading] = React.useState(false);
+    const [error, setError] = React.useState(null);
     React.useEffect(() => {
-        fetch('/api/host/vans')
-            .then(res => res.json())
-            .then(data => setHostVans(data.vans))
+        const fetchHostVans = async () => {
+            setLoading(true);
+            try {
+                const hostVans = await getHostVans();
+                setHostVans(hostVans);
+            } catch (e) {
+                setError(e)
+            }
+            setLoading(false);
+        }
+        fetchHostVans();
     }, [])
     const hostVansElements = hostVans.map(hostVan => {
         return (
@@ -21,6 +32,15 @@ export default function HostVans() {
             </Link>
         )
     })
+
+    if(loading) {
+        return (<h2>Loading...</h2>)
+    }
+
+    if(error) {
+        return <p style={{color: 'red', fontSize: '24px'}}>There was an Error: {error.message}</p>
+    }
+
     return (
         <div className='host-vans'>
             <h1 className='host-vans__header'>Your listed vans</h1>

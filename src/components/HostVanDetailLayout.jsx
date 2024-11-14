@@ -1,4 +1,5 @@
 import { Outlet, useParams } from 'react-router-dom';
+import { getHostVan } from '../api';
 import BackLink from './BackLink';
 import HostVanDetailCard from './HostVanDetailCard';
 import HostVanDetailHeader from './HostVanDetailHeader';
@@ -10,11 +11,31 @@ const HostVanDetailContext = React.createContext();
 export default function HostVanDetailLayout() {
     const { id: vanId } = useParams();
     const [hostVan, setHostVan] = React.useState({});
+    const [loading, setLoading] = React.useState(false);
+    const [error, setError] = React.useState(null);
+
     React.useEffect(() => {
-        fetch(`/api/host/vans/${vanId}`)
-            .then(res => res.json())
-            .then(data => setHostVan(data.vans))
+        const fetchHostVan = async () => {
+            setLoading(true);
+            try {
+                const hostVan = await getHostVan(vanId);
+                setHostVan(hostVan);
+            } catch (e) {
+                setError(e)
+            }
+            setLoading(false);
+        }
+        fetchHostVan();
     }, [vanId])
+
+    if(loading) {
+        return (<h2>Loading...</h2>)
+    }
+
+    if(error) {
+        return <p style={{color: 'red', fontSize: '24px'}}>There was an Error: {error.message}</p>
+    }
+
     return (
         <div className='host-van-detail-layout'>
             <BackLink />
