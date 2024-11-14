@@ -13,7 +13,7 @@ export default function HostVans() {
     const hostVansElements = hostVans.map(hostVan => {
         return (
             <Link
-                to={`/host/vans/${hostVan.id}`}
+                to={hostVan.id}
                 key={hostVan.id}
                 className='host-vans__card-link'
             >

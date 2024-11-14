@@ -17,9 +17,13 @@ export default function Vans() {
     }, [])
     const displayedVans = typeFilter
         ? vans.filter(van => van.type === typeFilter)
-        : vans
+        : vans;
     const allVans = displayedVans.map(van =>
-        <Link key={van.id} to={`/vans/${van.id}`}>
+        <Link
+            key={van.id}
+            to={van.id}
+            state={{ search: `?${searchParams.toString()}` }}
+        >
             <Van van={van} />
         </Link>
     )
@@ -45,12 +49,12 @@ export default function Vans() {
                 >
                     Rugged
                 </button>
-                <button
+                {typeFilter && <button
                     onClick={() => setSearchParams({})}
                     className='van-type clear-filters'
                 >
                     Clear filters
-                </button>
+                </button>}
             </div>
             <div className="vans-list">
                 {allVans}
