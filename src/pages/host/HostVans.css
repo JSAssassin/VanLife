@@ -20,3 +20,14 @@
     row-gap: 1em;
     margin-bottom: calc(4em + var(--FOOTER-HEIGHT));
 }
+
+.error {
+    color: red;
+    padding-inline: 1.4em;
+    font-size: 1.2rem;
+}
+
+.loading {
+    padding-inline: 1.4em;
+    font-size: 1.2rem;
+}

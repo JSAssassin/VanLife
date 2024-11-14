@@ -5,3 +5,14 @@
 a.back-link {
     padding-inline: 0;
 }
+
+.error {
+    color: red;
+    padding-inline: 1.4em;
+    font-size: 1.2rem;
+}
+
+.loading {
+    padding-inline: 1.4em;
+    font-size: 1.2rem;
+}

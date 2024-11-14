@@ -96,3 +96,14 @@
 .van-type.clear-filters.selected {
     color: #4D4D4D;
 }
+
+.error {
+    color: red;
+    padding-inline: 1.4em;
+    font-size: 1.2rem;
+}
+
+.loading {
+    padding-inline: 1.4em;
+    font-size: 1.2rem;
+}

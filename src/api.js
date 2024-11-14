@@ -13,6 +13,9 @@ export async function getVans() {
         throw new FetchError('Failed to fetch vans', res.status, res.statusText);
     }
     const data = await res.json();
+    if (!data || !data.vans) {
+        throw new Error('Failed to fetch vans');
+    }
     return data.vans;
 }
 
@@ -46,5 +49,8 @@ export async function getHostVans() {
         throw new FetchError('Failed to fetch host vans', res.status, res.statusText);
     }
     const data = await res.json();
+    if (!data || !data.vans) {
+        throw new Error('Failed to fetch host vans');
+    }
     return data.vans;
 }

@@ -34,11 +34,15 @@ export default function HostVans() {
     })
 
     if(loading) {
-        return (<h2>Loading...</h2>)
+        return <h2 className='loading'>Loading...</h2>
     }
 
     if(error) {
-        return <p style={{color: 'red', fontSize: '24px'}}>There was an Error: {error.message}</p>
+        return (
+            <p className='error'>
+                There was an Error: {error.message}
+            </p>
+        )
     }
 
     return (

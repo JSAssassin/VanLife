@@ -25,3 +25,14 @@
 .host-vans__card-detail-layout p span {
     color: var(--HOST-VAN-DETAIL-PRICE-COLOR);
 }
+
+.error {
+    color: red;
+    padding-inline: 1.4em;
+    font-size: 1.2rem;
+}
+
+.loading {
+    padding-inline: 1.4em;
+    font-size: 1.2rem;
+}
