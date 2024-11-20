@@ -46,13 +46,17 @@
     margin-bottom: 1.5em;
 }
 
-.about__explore-button {
+a.about__explore-button {
+    display: block;
     font-family: inherit;
     font-size: 1rem;
     font-weight: 700;
     background: var(--ABOUT-EXPLORE-BTNCOLOR);
     color: var(--ABOUT-EXPLORE-FONTCOLOR);
     height: 50px;
+    line-height: 50px;
     width: 175px;
     border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
 }

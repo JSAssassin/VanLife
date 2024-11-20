@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import image from '../../assets/about-img.png';
 import './About.css';
 
@@ -30,7 +31,7 @@ export default function About() {
                 <h2 className='about__cta-title'>
                     Your destination is waiting. Your van is ready.
                 </h2>
-                <button className='about__explore-button'>Explore our vans</button>
+                <Link className='about__explore-button' to="/vans">Explore our vans</Link>
             </div>
         </main>
     );

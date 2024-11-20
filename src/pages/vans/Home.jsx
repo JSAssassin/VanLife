@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import './Home.css';
 
 export default function Home() {
@@ -9,12 +10,13 @@ export default function Home() {
                     Add adventure to your life by joining the #vanlife movement.
                     Rent the perfect van to make your perfect road trip.
                 </p>
-                <button
+                <Link
                     className="home__button"
                     aria-label="Find your ideal van for your road trip"
+                    to="vans"
                 >
                     Find your van
-                </button>
+                </Link>
             </header>
         </main>
     );
