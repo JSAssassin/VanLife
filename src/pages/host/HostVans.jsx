@@ -8,11 +8,16 @@ export default function HostVans() {
     const [hostVans, setHostVans] = React.useState([]);
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState(null);
+
+    const user = localStorage.getItem("user");
+
     React.useEffect(() => {
         const fetchHostVans = async () => {
             setLoading(true);
             try {
-                const hostVans = await getHostVans();
+                const hostVans = await getHostVans({
+                    hostId: JSON.parse(user).id
+                });
                 setHostVans(hostVans);
             } catch (e) {
                 setError(e)
@@ -20,7 +25,7 @@ export default function HostVans() {
             setLoading(false);
         }
         fetchHostVans();
-    }, [])
+    }, [user])
     const hostVansElements = hostVans.map(hostVan => {
         return (
             <Link
