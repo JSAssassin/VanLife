@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './pages/vans/About';
+import AuthRequired from './components/AuthRequired';
 import Dashboard from './pages/host/Dashboard';
 import Home from './pages/vans/Home';
 import HostLayout from './components/HostLayout';
@@ -10,6 +11,7 @@ import HostVanDetailLayout from './components/HostVanDetailLayout';
 import HostVans from './pages/host/HostVans';
 import Income from './pages/host/Income';
 import Layout from './components/Layout';
+import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import Reviews from './pages/host/Reviews';
 import VanDetail from './pages/vans/VanDetail';
@@ -24,16 +26,19 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='vans' element={<Vans />} />
           <Route path='vans/:id' element={<VanDetail />} />
+          <Route path='login' element={<Login />}/>
 
-          <Route path='host' element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path='income' element={<Income />} />
-            <Route path='reviews' element={<Reviews />} />
-            <Route path='vans' element={<HostVans />} />
-            <Route path='vans/:id' element={<HostVanDetailLayout />}>
-              <Route index element={<HostVanDetails />} />
-              <Route path='pricing' element={<HostVanPricing />} />
-              <Route path='photos' index element={<HostVanPhotos />} />
+          <Route element={<AuthRequired />}>
+            <Route path='host' element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path='vans' element={<HostVans />} />
+              <Route path='vans/:id' element={<HostVanDetailLayout />}>
+                <Route index element={<HostVanDetails />} />
+                <Route path='pricing' element={<HostVanPricing />} />
+                <Route path='photos' index element={<HostVanPhotos />} />
+              </Route>
+              <Route path='income' element={<Income />} />
+              <Route path='reviews' element={<Reviews />} />
             </Route>
           </Route>
 
