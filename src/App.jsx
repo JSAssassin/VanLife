@@ -9,11 +9,9 @@ import HostVanPhotos from './pages/host/HostVanPhotos';
 import HostVanPricing from './pages/host/HostVanPricing';
 import HostVanDetailLayout from './components/HostVanDetailLayout';
 import HostVans from './pages/host/HostVans';
-import Income from './pages/host/Income';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
-import Reviews from './pages/host/Reviews';
 import VanDetail from './pages/vans/VanDetail';
 import Vans from './pages/vans/Vans';
 
@@ -37,8 +35,6 @@ function App() {
                 <Route path='pricing' element={<HostVanPricing />} />
                 <Route path='photos' index element={<HostVanPhotos />} />
               </Route>
-              <Route path='income' element={<Income />} />
-              <Route path='reviews' element={<Reviews />} />
             </Route>
           </Route>
 
