@@ -1,4 +1,4 @@
-import { createServer, Model } from "miragejs";
+import { createServer, Model, Response } from "miragejs";
 import PathToModestExplorer from "./assets/modest-explorer.png";
 import PathToBeachBum from "./assets/beach-bum.png";
 import PathToReliableRed from "./assets/reliable-red.png";
@@ -9,6 +9,7 @@ import PathToGreenWonder from "./assets/green-wonder.png";
 createServer({
     models: {
         vans: Model,
+        users: Model
     },
 
     seeds(server) {
@@ -18,6 +19,7 @@ createServer({
         server.create("van", { id: "4", name: "Dream Finder", price: 65, description: "Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated.", imageUrl: PathToDreamFinder, type: "simple", hostId: "789" })
         server.create("van", { id: "5", name: "The Cruiser", price: 120, description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.", imageUrl: PathToTheCruiser, type: "luxury", hostId: "789" })
         server.create("van", { id: "6", name: "Green Wonder", price: 70, description: "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.", imageUrl: PathToGreenWonder, type: "rugged", hostId: "123" })
+        server.create("user", { id: "123", email: "bob@email.com", password: "p123", name: "Bob" })
     },
 
     routes() {
@@ -29,20 +31,34 @@ createServer({
             return schema.vans.all()
         })
 
+        this.post("/login", (schema, request) => {
+            const { email, password } = JSON.parse(request.requestBody);
+            const foundUser = schema.users.findBy({ email, password });
+            if (!foundUser) {
+                return new Response(401, {}, { message: "No user with those credentials found!" });
+            }
+            foundUser.password = undefined
+            return new Response(200, {}, {
+                user: foundUser,
+                token: "Here's your token, enjoy."
+            });
+        })
+
         this.get("/vans/:id", (schema, request) => {
             const id = request.params.id
             return schema.vans.find(id)
         })
 
-        this.get("/host/vans", (schema) => {
-            // Hard-code the hostId for now
-            return schema.vans.where({ hostId: "123" })
+        this.get("/host/:hostId/vans", (schema, request) => {
+            const hostId = request.params.hostId
+            return schema.vans.where({ hostId })
         })
 
-        this.get("/host/vans/:id", (schema, request) => {
-            // Hard-code the hostId for now
+        this.get("/host/:hostId/vans/:id", (schema, request) => {
             const id = request.params.id
-            return schema.vans.findBy({ id, hostId: "123" })
+            const hostId = request.params.hostId
+
+            return schema.vans.findBy({ id, hostId })
         })
     }
 })
