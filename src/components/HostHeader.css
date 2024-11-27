@@ -5,11 +5,11 @@
 
 .host-header {
     display: flex;
-    justify-content:space-around;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 2.8em;
-    padding-inline: 1em;
+    padding-inline: 1.5em;
     font-size: 1rem;
+    column-gap: 10px;
 }
 
 .host-header a {

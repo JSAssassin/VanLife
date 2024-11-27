@@ -30,8 +30,8 @@
 }
 
 .navbar__logo {
-    width: 145px;
-    height: 41px;
+    width: 125px;
+    height: 40px;
 }
 
 .navbar__items {
@@ -48,4 +48,17 @@ a.active-link,
     font-weight: 700;
     text-decoration: underline;
     color: var(--NAVITEMS-FONTCOLOR-ACTIVE);
+}
+
+svg.logout-btn {
+    stroke: var(--NAVITEMS-RIGHT-FONTCOLOR);
+    fill: var(--NAVITEMS-RIGHT-FONTCOLOR);
+    height: 1.2em;
+    width: 1.2em;
+    stroke-width: 10;
+}
+
+svg.logout-btn:hover {
+    stroke: var(--NAVITEMS-FONTCOLOR-ACTIVE);
+    fill: var(--NAVITEMS-FONTCOLOR-ACTIVE);
 }
