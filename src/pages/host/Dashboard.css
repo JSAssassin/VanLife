@@ -1,0 +1,108 @@
+.host-dashboard__earnings {
+    background: #FFEAD0;
+    padding: 2em 1.5em;
+}
+
+.host-dashboard__earnings h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #161616;
+}
+
+.host-dashboard__earnings p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.host-dashboard__earnings h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.host-dashboard__reviews {
+    background: #FFDDB2;
+    padding: 2em 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.host-dashboard__reviews h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.host-dashboard__reviews-score {
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.star {
+    fill: #FF8C38;
+}
+
+.host-dashboard-vans {
+    padding: 2em 1.5em;
+    margin-bottom: calc(1.5em + var(--FOOTER-HEIGHT));
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.top a {
+    text-decoration: none;
+    color: #161616;
+    font-size: 1rem;
+}
+
+.top a:hover,
+.top a:focus {
+    text-decoration: underline;
+}
+
+.host-van-single {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    background: #FFFFFF;
+    height: 102px;
+    border-radius: 6px;
+}
+
+.host-dashboard-vans h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.host-van-single img {
+    height: 65px;
+    width: 65px;
+    border-radius: 5px;
+    margin-left: 1.3em;
+    margin-right: 1em;
+}
+
+.host-van-info h3 {
+    font-size: 1.3rem;
+}
+
+.host-van-info p {
+    color: #4D4D4D;
+    font-size: 1rem;
+}
+
+.host-van-single a {
+    text-decoration: none;
+    color: #161616;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: 1.6em;
+}
