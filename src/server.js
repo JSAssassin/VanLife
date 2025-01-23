@@ -20,12 +20,14 @@ createServer({
         server.create("van", { id: "5", name: "The Cruiser", price: 120, description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.", imageUrl: PathToTheCruiser, type: "luxury", hostId: "789" })
         server.create("van", { id: "6", name: "Green Wonder", price: 70, description: "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.", imageUrl: PathToGreenWonder, type: "rugged", hostId: "123" })
         server.create("user", { id: "123", email: "bob@email.com", password: "p123", name: "Bob", earnings: 2260, reviewScore: 4.8 })
+        server.create("user", { id: "456", email: "jane@email.com", password: "p456", name: "Jane", earnings: 1000, reviewScore: 3.5 })
+        server.create("user", { id: "789", email: "charlie@email.com", password: "p789", name: "Charlie", earnings: 2000, reviewScore: 5 })
     },
 
     routes() {
         this.namespace = "api"
         this.logging = false
-
+        this.passthrough("https://firestore.googleapis.com/**")
         this.get("/vans", (schema) => {
             // return new Response(400, {}, {error: "Error fetching data"})
             return schema.vans.all()

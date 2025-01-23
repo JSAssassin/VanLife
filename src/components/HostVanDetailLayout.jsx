@@ -1,5 +1,5 @@
 import { Outlet, useParams } from 'react-router-dom';
-import { getHostVan } from '../api';
+import { getVan } from '../api';
 import BackLink from './BackLink';
 import HostVanDetailCard from './HostVanDetailCard';
 import HostVanDetailHeader from './HostVanDetailHeader';
@@ -14,16 +14,12 @@ export default function HostVanDetailLayout() {
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState(null);
 
-    const user = localStorage.getItem("user");
-
     React.useEffect(() => {
         const fetchHostVan = async () => {
             setLoading(true);
             try {
-                const hostVan = await getHostVan({
-                    hostId: JSON.parse(user).id,
-                    vanId
-                });
+                const hostVan = await getVan(vanId);
+                console.log(hostVan, 'hostVan<><><>')
                 setHostVan(hostVan);
             } catch (e) {
                 setError(e)
@@ -31,7 +27,7 @@ export default function HostVanDetailLayout() {
             setLoading(false);
         }
         fetchHostVan();
-    }, [vanId, user])
+    }, [vanId])
 
     if(loading) {
         return <h2 className='loading' aria-live='polite'>Loading...</h2>
@@ -44,7 +40,6 @@ export default function HostVanDetailLayout() {
             </p>
         )
     }
-
     return (
         <div className='host-van-detail-layout'>
             <BackLink />
