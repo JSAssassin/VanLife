@@ -58,10 +58,8 @@ export async function getVans() {
 // }
 
 export async function getVan(id) {
-    console.log(id, 'id<><><><><>')
     const docRef = doc(db, 'vans', id)
     const snapshot = await getDoc(docRef)
-    console.log(snapshot, 'snapshot<><><><><>')
     return {
         id,
         ...snapshot.data(),

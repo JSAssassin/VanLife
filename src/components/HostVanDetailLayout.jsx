@@ -19,7 +19,6 @@ export default function HostVanDetailLayout() {
             setLoading(true);
             try {
                 const hostVan = await getVan(vanId);
-                console.log(hostVan, 'hostVan<><><>')
                 setHostVan(hostVan);
             } catch (e) {
                 setError(e)
